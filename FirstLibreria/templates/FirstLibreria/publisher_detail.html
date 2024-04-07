@@ -1,0 +1,37 @@
+{% extends '../layout/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="my-4">
+        <h1>Detalles del editor</h1>
+    </div>
+
+    <a href="{% url 'publisher_list' %}" class="btn btn-danger mb-3">
+        Volver
+    </a>
+
+    <div class="card shadow">
+        <div class="card-header">
+            <h5 class="font-weight-bold text-primary">Detalles del editor</h5>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered table-striped">
+                <tbody>
+                    <tr>
+                        <th>ID</th>
+                        <td>{{ publisher.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nombre</th>
+                        <td>{{ publisher.name }}</td>
+                    </tr>
+                    <tr>
+                        <th>Fecha de Fundación</th>
+                        <td>{{ publisher.foundation_date }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

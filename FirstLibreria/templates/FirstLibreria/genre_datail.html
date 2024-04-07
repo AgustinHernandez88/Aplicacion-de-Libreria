@@ -1,0 +1,33 @@
+{% extends '../layout/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="my-4">
+        <h1>Detalles del género</h1>
+    </div>
+
+    <a href="{% url 'genre_list' %}" class="btn btn-danger mb-3">
+        Volver
+    </a>
+
+    <div class="card shadow">
+        <div class="card-header">
+            <h5 class="font-weight-bold text-primary">Detalles del género</h5>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered table-striped">
+                <tbody>
+                    <tr>
+                        <th>ID</th>
+                        <td>{{ genre.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nombre</th>
+                        <td>{{ genre.name }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

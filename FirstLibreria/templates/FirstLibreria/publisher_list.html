@@ -1,0 +1,49 @@
+{% extends '../layout/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="my-4">
+        <h1>Listado de Editores</h1>
+    </div>
+
+    <a href="{% url 'publisher_new' %}" class="btn btn-success mb-3">
+        Agregar Autor
+    </a>
+
+    <div class="card shadow">
+        <div class="card-header">
+            <h5 class="font-weight-bold text-primary">Detalles de los Editores</h5>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for publisher in publishers %}
+                        <tr>
+                            <td>{{ publisher.id }}</td>
+                            <td>{{ publisher.name }}</td>
+                            <td>
+                                <a href="{% url 'publisher_edit' publisher.id %}" class="btn btn-warning">
+                                    Editar
+                                </a>
+                                <a href="{% url 'publisher_delete' publisher.id %}" class="btn btn-danger">
+                                    Eliminar
+                                </a>
+                            </td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="4">No hay autores registrados.</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

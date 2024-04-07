@@ -1,0 +1,50 @@
+{% extends '../layout/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="my-4">
+        <h1>Listado de Géneros</h1>
+    </div>
+
+    <a href="{% url 'genre_new' %}" class="btn btn-success mb-3">
+        Agregar Género
+    </a>
+
+    <div class="card shadow">
+        <div class="card-header">
+            <h5 class="font-weight-bold text-primary">Detalles de los Géneros</h5>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for genre in genres %}
+                        <tr>
+                            <td>{{ genre.id }}</td>
+                            <td>{{ genre.name }}</td>
+                            <td>
+                                <a href="{% url 'genre_edit' genre.id %}" class="btn btn-warning">
+                                    Editar
+                                </a>
+                                <a href="{% url 'genre_delete' genre.id %}" class="btn btn-danger">
+                                    Eliminar
+                                </a>
+                            </td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="3">No hay géneros registrados.</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends '../layout/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="my-4">
+        <h1>Listado de Autores</h1>
+    </div>
+
+    <a href="{% url 'author_new' %}" class="btn btn-success mb-3">
+        Agregar Autor
+    </a>
+
+    <div class="card shadow">
+        <div class="card-header">
+            <h5 class="font-weight-bold text-primary">Detalles de los Autores</h5>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre del autor</th>
+                        <th>Fecha de Nacimiento</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for author in authors %}
+                        <tr>
+                            <td>{{ author.id }}</td>
+                            <td>{{ author.name }}</td>
+                            <td>{{ author.date_of_birth }}</td>
+                            <td>
+                                <a href="{% url 'author_edit' author.id %}" class="btn btn-warning">
+                                    Editar
+                                </a>
+                                <a href="{% url 'author_delete' author.id %}" class="btn btn-danger">
+                                    Eliminar
+                                </a>
+                            </td>
+                        </tr>
+                    {% empty %}
+                        <tr>
+                            <td colspan="4">No hay autores registrados.</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

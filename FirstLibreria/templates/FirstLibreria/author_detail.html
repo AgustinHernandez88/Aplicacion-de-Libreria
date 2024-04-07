@@ -1,0 +1,37 @@
+{% extends '../layout/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="my-4">
+        <h1>Detalles del autor</h1>
+    </div>
+
+    <a href="{% url 'author_list' %}" class="btn btn-danger mb-3">
+        Volver
+    </a>
+
+    <div class="card shadow">
+        <div class="card-header">
+            <h5 class="font-weight-bold text-primary">Detalles del autor</h5>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered table-striped">
+                <tbody>
+                    <tr>
+                        <th>ID</th>
+                        <td>{{ author.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nombre</th>
+                        <td>{{ author.name }}</td>
+                    </tr>
+                    <tr>
+                        <th>Fecha de Nacimiento</th>
+                        <td>{{ author.date_of_birth }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

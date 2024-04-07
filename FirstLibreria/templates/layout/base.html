@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libros</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: navy;
+            color: white;
+        }
+
+        .navbar {
+            background-color: white;
+        }
+
+        .navbar-brand {
+            color: navy;
+            font-size: 1rem;
+            margin-right: 1rem;
+        }
+
+        .navbar-text {
+            color: navy;
+            margin-right: auto;
+            font-size: 1.5rem;
+        }
+
+        .navbar-nav .nav-link {
+            margin-right: 1rem;
+            font-size: 1rem;
+        }
+
+        footer {
+            background-color: navy;
+            color: white;
+            padding: 10px;
+        }
+
+        footer a {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="navbar-text">
+            Librería el Libro Sabio
+        </div>
+        <a class="navbar-brand" href="/">Libros</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/publisher">Editoriales</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/author">Autores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/genre">Géneros</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% block content %}
+    {% endblock %}
+
+    <footer class="text-center mt-5">
+        <p>&copy; {{ 2023 }} Agustin Hernandez Silva - Ingenieria Informatica INACAP. Todos los derechos reservados. | <a href="https://www.instagram.com/agustin.photo/" target="_blank">Instagram</a></p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXn2x2xg4pF5F5f5F5f5F5f5F5" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-jZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYlT" crossorigin="anonymous"></script>
+</body>
+</html>
