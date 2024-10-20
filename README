@@ -1,3 +1,28 @@
-* Realizado por Agustín Hernández
-* Para levantar la aplicación python manage.py runserver
-* Importante Django y pip
+App Librería
+Este proyecto es una aplicación web desarrollada en Python utilizando el framework Django.
+
+Requisitos
+Asegúrate de tener instalados los siguientes componentes antes de levantar la aplicación:
+
+Python (versión 3.6 o superior)
+Django (puedes instalarlo con pip install django)
+pip (gestor de paquetes de Python)
+Instrucciones para ejecutar la aplicación
+Clona este repositorio en tu máquina local:
+
+git clone https://github.com/tuusuario/tu-repositorio.git
+Navega al directorio del proyecto:
+
+cd App-libreria
+Instala las dependencias del proyecto:
+
+pip install -r requirements.txt
+Levanta el servidor de desarrollo de Django:
+
+bash
+Copiar código
+python manage.py runserver
+Abre tu navegador y accede a http://127.0.0.1:8000/ para ver la aplicación en funcionamiento.
+
+Información adicional
+Este proyecto fue realizado por Agustín Hernández.
