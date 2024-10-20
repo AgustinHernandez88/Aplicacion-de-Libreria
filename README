@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 App Librería
 Este proyecto es una aplicación web desarrollada en Python utilizando el framework Django.
 
@@ -26,8 +25,4 @@ Abre tu navegador y accede a http://127.0.0.1:8000/ para ver la aplicación en f
 
 Información adicional
 Este proyecto fue realizado por Agustín Hernández.
-=======
-* Realizado por Agustín Hernández
-* Para levantar la aplicación python manage.py runserver
-* Importante Django y pip
->>>>>>> 9f6ae7b (Se actualizó instagram y errores tipograficos)
+
