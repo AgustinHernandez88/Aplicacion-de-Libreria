@@ -19,7 +19,6 @@ Instala las dependencias del proyecto:
 pip install -r requirements.txt
 Levanta el servidor de desarrollo de Django:
 
-bash
 Copiar código
 python manage.py runserver
 Abre tu navegador y accede a http://127.0.0.1:8000/ para ver la aplicación en funcionamiento.
